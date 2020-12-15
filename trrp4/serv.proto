@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+
+service Sender_stock_inf {
+    rpc Send_stock_quotes(stock_quotes_inp) returns (stock_quotes_rez) {}
+    rpc chek(chek_msg) returns (chek_stat) {}
+}
+message chek_msg {
+    string msg = 1;
+}
+message chek_stat {
+    string stat = 1;
+}
+message stock_quotes_inp {
+    string date = 1;
+    string enddate = 2;
+    string tiker = 3;
+}
+
+message stock_quotes_rez {
+    repeated string date = 1;
+    repeated double close = 2;
+    repeated double high = 3;
+    repeated double low = 4;
+}
+
