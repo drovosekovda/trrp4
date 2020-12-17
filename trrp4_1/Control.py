@@ -19,6 +19,7 @@ configur.read('serv_config.ini')
 ip = configur.get('network', 'ip')
 port = configur.get('network', 'port')
 try:
+    print("Проверка работоспособности исполнителя")
     channel = grpc.insecure_channel(str(ip) + ':' + str(port))
     stub = serv_pb2_grpc.Sender_stock_infStub(channel)
     reaqest = serv_pb2.chek_msg(msg="1")

@@ -13,13 +13,14 @@ flag=True
 port=int(port_str_min)
 while flag:
     try:
-        print(port)
+        print("Отправление запроса на порт " + str(port))
         channel = grpc.insecure_channel(str(ip) + ':' + str(port))
         stub = serv_pb2_grpc.Sender_stock_infStub(channel)
         reaqest = serv_pb2.chek_msg(msg="1")
         response = stub.chek(reaqest)
         flag=False
     except:
+        print("Ответ не получен")
         if port>port_str_max:
             port=port_str_min
         else:
