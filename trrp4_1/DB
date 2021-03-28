@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[moex](
+	[tiker] [varchar](50) NULL,
+	[datereport] [datetime] NULL,
+	[close_p] [numeric](23, 2) NULL,
+	[low_p] [numeric](23, 2) NULL,
+	[high_p] [numeric](23, 2) NULL
+) ON [PRIMARY]
+GO
+
